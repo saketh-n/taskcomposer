@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from "./components/header";
+import Main from "./pages/main";
+import Composer from "./pages/composer";
+import { useState } from "react";
+import { Switch, Route } from "react-router-dom";
 
 function App() {
+  const [tasks, setTasks] = useState({});
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header />
+      <Switch>
+        <Route exact path="/">
+          <Main tasks={tasks} setTasks={setTasks} />
+        </Route>
+        <Route exact path="/task-:taskname">
+          <Composer tasks={tasks} setTasks={setTasks} />
+        </Route>
+      </Switch>
     </div>
   );
 }
