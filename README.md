@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Getting Started with Task Composer
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[Video demo](https://www.youtube.com/watch?v=smGpF38vgbM)
 
 ## Available Scripts
 
