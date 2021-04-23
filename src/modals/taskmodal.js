@@ -12,7 +12,11 @@ export default function TaskModal(props) {
 
   const handleSubmit = () => {
     setShowModal(false);
-    history.push(`/task-${taskName}`);
+    if (!taskName) {
+      window.alert("Task Name cannot be empty!");
+    } else {
+      history.push(`/task-${taskName}`);
+    }
   };
 
   return (

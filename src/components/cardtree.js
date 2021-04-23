@@ -1,5 +1,7 @@
 import Card from "./card";
 import { useState } from "react";
+// Store global state on card positions for rendering links
+import { CardContextProvider } from "../context/cardcontext";
 
 export default function CardTree(props) {
   const { tree } = props;
@@ -45,5 +47,5 @@ export default function CardTree(props) {
     ));
   };
 
-  return <>{renderTree(tree)}</>;
+  return <CardContextProvider>{renderTree(tree)}</CardContextProvider>;
 }
